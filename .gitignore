@@ -1,0 +1,26 @@
+# Dependências (Nunca envie esta pasta!)
+node_modules/
+jspm_packages/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema Operacional (Arquivos ocultos do Mac)
+.DS_Store
+Thumbs.db
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.patch
+
+# Cobertura de testes (se você usar futuramente)
+coverage/
+*.lcov
+
+# Arquivos de ambiente/segredo (caso adicione no futuro)
+.env
+.env.local

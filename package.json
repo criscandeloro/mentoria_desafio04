@@ -1,0 +1,32 @@
+{
+  "name": "desafio04",
+  "version": "1.0.0",
+  "description": "Name: Cristine Candeloro Linkedin: https://www.linkedin.com/in/cristinecandeloro",
+  "main": "src/app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+   "start": "node src/app.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/criscandeloro/mentoria_desafio04.git"
+  },
+  "keywords": [],
+  "author": "Cristine Candeloro",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/criscandeloro/mentoria_desafio04/issues"
+  },
+  "homepage": "https://github.com/criscandeloro/mentoria_desafio04#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0", 
+    "supertest": "^7.0.0"
+  }
+}
