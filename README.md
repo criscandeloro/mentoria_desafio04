@@ -6,8 +6,11 @@ Este projeto faz parte da **Mentoria Júlio de Lima**. O objetivo é construir u
 - **Nome:** Cristine Candeloro
 - **LinkedIn:** [https://www.linkedin.com/in/cristinecandeloro](https://www.linkedin.com/in/cristinecandeloro)
 
+- **Nome:** Ruben Ueber
+- **LinkedIn:** [https://www.linkedin.com/in/rubenueber/](https://www.linkedin.com/in/rubenueber/)
 
----
+- **Nome:** Luiz Neto
+- **LinkedIn:** [https://www.linkedin.com/in/luiz-neto-qa/](https://www.linkedin.com/in/luiz-neto-qa/)
 
 ## 🛠️ Tecnologias Utilizadas
 - **Node.js** (Ambiente de execução)
