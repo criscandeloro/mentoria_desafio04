@@ -1,32 +1,62 @@
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
+const petController = require('./controllers/petController');
+
 const app = express();
 app.use(express.json());
 
-// Banco de dados em memória
-let pets = [];
+// Configurações do Swagger
+const swaggerOptions = {
+    definition: {
+        openapi: '3.0.0',
+        info: {
+            title: 'API de Cadastro de Pets - Desafio 04',
+            version: '1.0.0',
+            description: 'API desenvolvida para a Mentoria Júlio de Lima com regras de peso e idade.',
+            contact: { name: 'Cristine Candeloro' }
+        },
+        servers: [{ url: 'http://localhost:3000' }]
+    },
+    apis: ['./src/app.js'], // Onde o Swagger vai procurar os comentários
+};
 
-app.post('/pets', (req, res) => {
-    const { nome, dono, idade, peso } = req.body;
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-    // Regras de Negócio
-    if (peso > 50) {
-        return res.status(400).json({ error: "A empresa não aceita pets com mais de 50kg." });
-    }
-
-    if (idade < 2) {
-        return res.status(400).json({ error: "A empresa não aceita pets com menos de 2 anos." });
-    }
-
-    // Cadastro
-    const novoPet = { id: pets.length + 1, nome, dono, idade, peso };
-    pets.push(novoPet);
-
-    return res.status(201).json(novoPet);
-});
-
-const PORT = 3000;
+/**
+ * @openapi
+ * /pets:
+ *   post:
+ *     summary: Cadastra um novo pet
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nome:
+ *                 type: string
+ *               dono:
+ *                 type: string
+ *               idade:
+ *                 type: integer
+ *               peso:
+ *                 type: number
+ *     responses:
+ *       201:
+ *         description: Pet cadastrado com sucesso
+ *       400:
+ *         description: Erro de validação (Peso > 50kg ou Idade < 2 anos)
+ */
+app.post('/pets', petController.create);
 
 if (require.main === module) {
-    app.listen(PORT, () => console.log(`API rodando na porta ${PORT}`));
+    app.listen(3000, () => {
+        console.log("API rodando na porta 3000");
+        console.log("Swagger disponível em http://localhost:3000/api-docs");
+    });
 }
-module.exports = app; // Exportado para os testes
+
+module.exports = app;

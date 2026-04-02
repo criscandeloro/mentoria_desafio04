@@ -7,8 +7,8 @@
     "test": "test"
   },
   "scripts": {
-   "start": "node src/app.js",
-    "test": "jest"
+    "start": "node src/app.js",
+    "test": "mocha test/**/*.test.js --exit"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,13 @@
   },
   "homepage": "https://github.com/criscandeloro/mentoria_desafio04#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "jest": "^29.7.0", 
-    "supertest": "^7.0.0"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "supertest": "^7.2.2"
   }
 }
