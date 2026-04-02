@@ -2,10 +2,10 @@
 
 Este projeto faz parte da **Mentoria Júlio de Lima**. O objetivo é construir uma API simples para cadastro de pets, aplicando regras de negócio específicas e garantindo a qualidade através de testes automatizados.
 
-## 👤 Autor
-- **Nome:** Cristine Candeloro (Cris)
+## 👤 Autores
+- **Nome:** Cristine Candeloro
 - **LinkedIn:** [https://www.linkedin.com/in/cristinecandeloro](https://www.linkedin.com/in/cristinecandeloro)
-- **Cargo:** Quality Analytics
+
 
 ---
 
