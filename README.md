@@ -50,23 +50,32 @@ npm start
 ```
 A API estará disponível em http://localhost:3000.
 
+### 4. Documentação Swagger
 
-### 4. Como rodar os testes
+Com o servidor rodando, você pode visualizar e testar os endpoints através da interface do Swagger:
 
-Os testes automatizados validam o "caminho feliz" (cadastro com sucesso) e os cenários de erro das regras de negócio.
+👉 http://localhost:3000/api-docs
 
-Para executar os testes com o Jest, utilize o comando:
+### 5. Como rodar os testes
+
+Os testes automatizados validam o "caminho feliz" e as mensagens de erro das regras de negócio utilizando Mocha e Chai.
+
+Para executar os testes, utilize o comando:
 
 ```bash
 npm test
 ```
 ### Estrutura do Projeto
 ```bash
+├── .github/workflows/  # Pipeline de Integração Contínua (CI)
 ├── src/
-│   └── app.js          # Código fonte da API e regras de negócio
+│   ├── controllers/    # Orquestração das requisições e respostas
+│   ├── services/       # Implementação das Regras de Negócio
+│   ├── models/         # Estrutura de dados e persistência em memória
+│   └── app.js          # Configuração do Express, Swagger e Rotas
 ├── test/
-│   └── pet.test.js     # Testes automatizados (Jest + Supertest)
-├── package.json        # Configurações do projeto e dependências
+│   └── pet.test.js     # Testes de integração (Mocha + Chai + Supertest)
+├── package.json        # Dependências e scripts do projeto
 └── README.md           # Documentação do projeto
 ```
 
