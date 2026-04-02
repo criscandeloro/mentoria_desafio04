@@ -2,17 +2,22 @@ name: Node.js CI - Testes
 
 on:
   push:
-    branches: [ "main", "develop" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    
+    # Resolve o aviso de depreciação
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x] # Testa em diferentes versões do Node
+        # 20 é a estabilidade, 22 é a atual e 24 é a nova vanguarda
+        node-version: [20.x, 22.x, 24.x] 
 
     steps:
     - name: Checkout repository
@@ -22,12 +27,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm' # Cache para acelerar futuras execuções
+        cache: 'npm'
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci # 'npm ci' é melhor que 'install' para automações
 
     - name: Run tests
       run: npm test
-      env:
-        NODE_ENV: test
