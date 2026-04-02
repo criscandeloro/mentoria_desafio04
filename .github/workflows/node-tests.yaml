@@ -9,14 +9,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     strategy:
       matrix:
-        node-version: [20.x, 22.x] # Testando em versões estáveis do Node
+        # Recomendo atualizar a matriz para as versões mais atuais
+        node-version: [22.x, 24.x] 
 
     steps:
     - uses: actions/checkout@v4
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
