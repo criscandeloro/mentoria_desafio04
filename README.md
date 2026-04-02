@@ -13,10 +13,18 @@ Este projeto faz parte da **Mentoria Júlio de Lima**. O objetivo é construir u
 - **LinkedIn:** [https://www.linkedin.com/in/luiz-neto-qa/](https://www.linkedin.com/in/luiz-neto-qa/)
 
 ## 🛠️ Tecnologias Utilizadas
-- **Node.js** (Ambiente de execução)
-- **Express** (Framework para a API)
-- **Jest** (Framework de testes)
-- **Supertest** (Biblioteca para testes de integração HTTP)
+
+Node.js (Ambiente de execução)
+
+Express (Framework Web)
+
+Mocha & Chai (Framework de testes e biblioteca de asserções)
+
+Supertest (Biblioteca para testes de integração HTTP)
+
+Swagger (OpenAPI 3.0) (Documentação interativa da API)
+
+GitHub Actions (Automação de CI/CD)
 
 ---
 
